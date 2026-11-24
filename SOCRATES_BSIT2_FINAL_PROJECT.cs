@@ -65,6 +65,26 @@ public class Phonebook{
         }while (addMore == "Y");
     }
     
+    public static void EditStudent(List<Phonebook> Students){
+        Console.Write("Search Student Number: ");
+        string searchStudent = Console.ReadLine();
+        bool studentFound = false;
+        foreach (Phonebook studentID in Students){
+            if (searchStudent == studentID.studentNumber){
+                Console.WriteLine($"{studentID.Firstname} {studentID.Surname} is a {studentID.Occupation}. Gender is {studentID.Gender}. And their number is {studentID.countryCode}-{studentID.areaCode}-{studentID.phoneNumber}");
+                studentFound = true;
+            }
+            }
+            if (studentFound){
+                //task//   
+            }else {
+                Console.WriteLine("Student Not Found");
+            }
+        }
+    
+    public static void SearchStudent(List<Phonebook> Students){
+        
+    }
     
     static void Main() {
     List<Phonebook> Students = new List<Phonebook>();
@@ -81,8 +101,10 @@ public class Phonebook{
                 AddStudent(Students);
                 break;
             case "2":
+                EditStudent(Students);
                 break;
             case "3":
+                SearchStudent(Students);
                 break;
             case "4":
                 Console.Write("Exiting Program...");
