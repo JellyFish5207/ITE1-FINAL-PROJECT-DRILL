@@ -73,11 +73,74 @@ public class Phonebook{
             if (searchStudent == studentID.studentNumber){
                 Console.WriteLine($"{studentID.Firstname} {studentID.Surname} is a {studentID.Occupation}. Gender is {studentID.Gender}. And their number is {studentID.countryCode}-{studentID.areaCode}-{studentID.phoneNumber}");
                 studentFound = true;
+                
+                Console.WriteLine("Which of the Following information do you wish to change?");
+                string menuSelect;
+                do{
+                    Console.WriteLine("[1] Student Number | [2] Surname | [3] Firstname | [4] Gender");
+                    Console.WriteLine("[5] Occupation | [6] Country Code | [7] Area Code | [8] Phone Number");
+                    Console.WriteLine("[9] Go Back to Main Menu");
+                    Console.Write("Select Option: ");
+                    menuSelect = Console.ReadLine();
+                    switch (menuSelect){
+                        case "1":
+                            Console.Write($"Changing Student Number from {studentID.studentNumber} to: ");
+                            studentID.studentNumber = Console.ReadLine();
+                            Console.WriteLine($"Student Number is now {studentID.studentNumber}");    
+                            break;
+                        case "2":
+                            Console.Write($"Changing Surname from {studentID.Surname} to: ");
+                            studentID.Surname = Console.ReadLine();
+                            Console.WriteLine($"Surname is now {studentID.Surname}");    
+                            break;
+                        case "3":
+                            Console.Write($"Changing First Name from {studentID.Firstname} to: ");
+                            studentID.Firstname = Console.ReadLine();
+                            Console.WriteLine($"Firstname is now {studentID.Firstname}");    
+                            break;
+                        case "4":
+                        string genderNew;
+                            do{
+                                Console.Write($"Changing Gender from {studentID.Gender} to (M/F): ");
+                                genderNew = Console.ReadLine().ToUpper();
+                                if (genderNew != "M" && genderNew != "F"){
+                                    Console.WriteLine("Select a VALID Option");
+                                }
+                            }while (genderNew != "M" && genderNew != "F");
+                            studentID.Gender = genderNew;
+                            Console.WriteLine($"Gender is now {studentID.Gender}");   
+                            break;
+                        case "5":
+                            Console.Write($"Changing Occupation from {studentID.Occupation} to: ");
+                            studentID.Occupation = Console.ReadLine();
+                            Console.WriteLine($"Occupation is now {studentID.Occupation}");    
+                            break;
+                        case "6":
+                            Console.Write($"Changing Country Code from {studentID.countryCode} to: ");
+                            studentID.countryCode = Console.ReadLine();
+                            Console.WriteLine($"Country Code is now {studentID.countryCode}");    
+                            break;
+                        case "7":
+                            Console.Write($"Changing Area Code from {studentID.areaCode} to: ");
+                            studentID.areaCode = Console.ReadLine();
+                            Console.WriteLine($"Area Code is now {studentID.areaCode}");    
+                            break;
+                        case "8":
+                            Console.Write($"Changing Phone Number from {studentID.phoneNumber} to: ");
+                            studentID.phoneNumber = Console.ReadLine();
+                            Console.WriteLine($"Phone Number is now {studentID.phoneNumber}");    
+                            break;    
+                        case "9":
+                            Console.Write("Returning to Main Menu...");
+                            break;
+                        default:
+                            Console.WriteLine("Select a VALID Option");
+                            break;
+                    }
+                }while (menuSelect != "9");
             }
             }
-            if (studentFound){
-                //task//   
-            }else {
+            if (!studentFound){
                 Console.WriteLine("Student Not Found");
             }
         }
