@@ -1,15 +1,29 @@
 using System;
 public class Phonebook{
-    string Country {get; set;}
-    int countryCode{get; set;}
+    string studentNumber{get; set;}
+    string Surname{get; set;}
+    string Firstname{get; set;}
+    string Occupation{get; set;}
+    string Gender{get; set;}
+    string countryCode{get; set;}
+    string areaCode{get; set;}
+    string phoneNumber{get; set;}
     
-    public Phonebook(string Country, int countryCode){
-        this.Country =  Country;
+    
+    public Phonebook(string studentNumber, string Surname, string Firstname, string Occupation, string Gender, string countryCode, string areaCode, string phoneNumber){
+        this.studentNumber =  studentNumber;
+        this.Surname = Surname;
+        this.Firstname = Firstname;
+        this.Occupation = Occupation;
+        this.Gender = Gender;
         this.countryCode = countryCode;
+        this.areaCode = areaCode;
+        this.phoneNumber = phoneNumber;
     }
     
     
     static void Main() {
+    List<Phonebook> Students = new List<Phonebook>();
     string menuSelect;
     do{
         Console.WriteLine("[1] Store to ASEAN phonebook");
