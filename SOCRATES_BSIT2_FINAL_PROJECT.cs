@@ -52,9 +52,11 @@ public class Phonebook{
             
             Console.Write("Enter Phone Number: ");
             string phoneNumber = Console.ReadLine();
-            
+            Console.WriteLine($"{Firstname} {Surname} is a {Occupation}. Gender is {Gender}. And their number is {countryCode}-{areaCode}-{phoneNumber}");
+
             Phonebook studentDetail = new Phonebook(studentNumber, Surname, Firstname, Occupation,Gender,countryCode,areaCode,phoneNumber);
             Students.Add(studentDetail);
+            Console.WriteLine("");
             
             Console.Write("Do you want to enter another entry [Y/N]? ");
             addMore = Console.ReadLine().ToUpper();
@@ -64,9 +66,11 @@ public class Phonebook{
                     addMore = Console.ReadLine().ToUpper();
                 }}while(addMore != "Y" && addMore != "N");
         }while (addMore == "Y");
+        Console.WriteLine("");
     }
     
     public static void EditStudent(List<Phonebook> Students){
+        Console.WriteLine("");
         Console.Write("Search Student Number: ");
         string searchStudent = Console.ReadLine();
         bool studentFound = false;
@@ -74,33 +78,37 @@ public class Phonebook{
             if (searchStudent == studentID.studentNumber){
                 Console.WriteLine($"{studentID.Firstname} {studentID.Surname} is a {studentID.Occupation}. Gender is {studentID.Gender}. And their number is {studentID.countryCode}-{studentID.areaCode}-{studentID.phoneNumber}");
                 studentFound = true;
-                
-                Console.WriteLine("Which of the Following information do you wish to change?");
+                Console.WriteLine("");
                 string menuSelect;
                 do{
+                    Console.WriteLine("Which of the Following information do you wish to change?");
                     Console.WriteLine("[1] Student Number | [2] Surname | [3] Firstname | [4] Gender");
                     Console.WriteLine("[5] Occupation | [6] Country Code | [7] Area Code | [8] Phone Number");
                     Console.WriteLine("[9] Go Back to Main Menu");
                     Console.Write("Select Option: ");
                     menuSelect = Console.ReadLine();
+                    Console.WriteLine("");
                     switch (menuSelect){
                         case "1":
                             Console.Write($"Changing Student Number from {studentID.studentNumber} to: ");
                             studentID.studentNumber = Console.ReadLine();
                             Console.WriteLine($"Student Number is now {studentID.studentNumber}");
                             Console.WriteLine($"{studentID.Firstname} {studentID.Surname} is a {studentID.Occupation}. Gender is {studentID.Gender}. And their number is {studentID.countryCode}-{studentID.areaCode}-{studentID.phoneNumber}");
+                            Console.WriteLine("");
                             break;
                         case "2":
                             Console.Write($"Changing Surname from {studentID.Surname} to: ");
                             studentID.Surname = Console.ReadLine();
                             Console.WriteLine($"Surname is now {studentID.Surname}");
                             Console.WriteLine($"{studentID.Firstname} {studentID.Surname} is a {studentID.Occupation}. Gender is {studentID.Gender}. And their number is {studentID.countryCode}-{studentID.areaCode}-{studentID.phoneNumber}");
+                            Console.WriteLine("");
                             break;
                         case "3":
                             Console.Write($"Changing First Name from {studentID.Firstname} to: ");
                             studentID.Firstname = Console.ReadLine();
                             Console.WriteLine($"Firstname is now {studentID.Firstname}");
                             Console.WriteLine($"{studentID.Firstname} {studentID.Surname} is a {studentID.Occupation}. Gender is {studentID.Gender}. And their number is {studentID.countryCode}-{studentID.areaCode}-{studentID.phoneNumber}");
+                            Console.WriteLine("");
                             break;
                         case "4":
                         string genderNew;
@@ -114,36 +122,43 @@ public class Phonebook{
                             studentID.Gender = genderNew;
                             Console.WriteLine($"Gender is now {studentID.Gender}");
                             Console.WriteLine($"{studentID.Firstname} {studentID.Surname} is a {studentID.Occupation}. Gender is {studentID.Gender}. And their number is {studentID.countryCode}-{studentID.areaCode}-{studentID.phoneNumber}");
+                            Console.WriteLine("");
                             break;
                         case "5":
                             Console.Write($"Changing Occupation from {studentID.Occupation} to: ");
                             studentID.Occupation = Console.ReadLine();
                             Console.WriteLine($"Occupation is now {studentID.Occupation}");  
                             Console.WriteLine($"{studentID.Firstname} {studentID.Surname} is a {studentID.Occupation}. Gender is {studentID.Gender}. And their number is {studentID.countryCode}-{studentID.areaCode}-{studentID.phoneNumber}");
+                            Console.WriteLine("");
                             break;
                         case "6":
                             Console.Write($"Changing Country Code from {studentID.countryCode} to: ");
                             studentID.countryCode = Console.ReadLine();
                             Console.WriteLine($"Country Code is now {studentID.countryCode}");  
                             Console.WriteLine($"{studentID.Firstname} {studentID.Surname} is a {studentID.Occupation}. Gender is {studentID.Gender}. And their number is {studentID.countryCode}-{studentID.areaCode}-{studentID.phoneNumber}");
+                            Console.WriteLine("");
                             break;
                         case "7":
                             Console.Write($"Changing Area Code from {studentID.areaCode} to: ");
                             studentID.areaCode = Console.ReadLine();
                             Console.WriteLine($"Area Code is now {studentID.areaCode}");
                             Console.WriteLine($"{studentID.Firstname} {studentID.Surname} is a {studentID.Occupation}. Gender is {studentID.Gender}. And their number is {studentID.countryCode}-{studentID.areaCode}-{studentID.phoneNumber}");
+                            Console.WriteLine("");
                             break;
                         case "8":
                             Console.Write($"Changing Phone Number from {studentID.phoneNumber} to: ");
                             studentID.phoneNumber = Console.ReadLine();
                             Console.WriteLine($"Phone Number is now {studentID.phoneNumber}");
                             Console.WriteLine($"{studentID.Firstname} {studentID.Surname} is a {studentID.Occupation}. Gender is {studentID.Gender}. And their number is {studentID.countryCode}-{studentID.areaCode}-{studentID.phoneNumber}");
+                            Console.WriteLine("");
                             break;    
                         case "9":
                             Console.Write("Returning to Main Menu...");
+                            Console.WriteLine("");
                             break;
                         default:
                             Console.WriteLine("Select a VALID Option");
+                            Console.WriteLine("");
                             break;
                     }
                 }while (menuSelect != "9");
@@ -151,17 +166,20 @@ public class Phonebook{
             }
             if (!studentFound){
                 Console.WriteLine("Student Not Found");
+                Console.WriteLine("");
             }
         }
     
     public static void SearchStudent(List<Phonebook> Students){
-     Console.WriteLine("Which country would you like to search?");
+        Console.WriteLine("");
         string menuSelect;
         do{
+            Console.WriteLine("Which country would you like to search?");
             Console.WriteLine("[1] Philippines | [2] Thailand | [3] Singapore | [4] Indonesia");
             Console.WriteLine("[5] Malaysia | [6] ALL | [0] No More");
             Console.Write("Search Option: ");
             menuSelect = Console.ReadLine();
+            Console.WriteLine("");
             switch (menuSelect){
                 case "1":
                     Console.WriteLine("Here are the students from Philippines:");   
@@ -169,6 +187,7 @@ public class Phonebook{
                         if (studentCountry.countryCode == "63"){
                         Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");}
                     }
+                    Console.WriteLine("");
                     break;
                 case "2":
                     Console.WriteLine("Here are the students from Thailand:");   
@@ -176,6 +195,7 @@ public class Phonebook{
                         if (studentCountry.countryCode == "66"){
                         Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");}
                     }
+                    Console.WriteLine("");
                     break;
                 case "3":
                     Console.WriteLine("Here are the students from Singapore:");   
@@ -183,6 +203,7 @@ public class Phonebook{
                         if (studentCountry.countryCode == "65"){
                         Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");}
                     }
+                    Console.WriteLine("");
                     break;
                 case "4":
                     Console.WriteLine("Here are the students from Indonesia:");   
@@ -190,6 +211,7 @@ public class Phonebook{
                         if (studentCountry.countryCode == "62"){
                         Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");}
                     }
+                    Console.WriteLine("");
                     break;
                 case "5":
                     Console.WriteLine("Here are the students from Malaysia:");   
@@ -197,17 +219,21 @@ public class Phonebook{
                         if (studentCountry.countryCode == "60"){
                         Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");}
                     }
+                    Console.WriteLine("");
                     break;
                 case "6":
                     Console.WriteLine("Here are ALL the students:");   
                     foreach (Phonebook studentCountry in Students.OrderBy(s => s.Surname)){
                         Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");}
+                    Console.WriteLine("");
                     break;
                 case "0":
                     Console.Write("Search by Country has ended.\nReturning to Main Menu...");
+                    Console.WriteLine("");
                     break;
                 default:
                     Console.WriteLine("Select a VALID Option");
+                    Console.WriteLine("");
                     break;
                     }
                 }while (menuSelect != "0");    
@@ -217,6 +243,7 @@ public class Phonebook{
     List<Phonebook> Students = new List<Phonebook>();
     string menuSelect;
     do{
+        Console.WriteLine("My Phonebook");
         Console.WriteLine("[1] Store to ASEAN phonebook");
         Console.WriteLine("[2] Edit entry in ASEAN phonebook");
         Console.WriteLine("[3] Search ASEAN phonebook by country");
@@ -225,12 +252,15 @@ public class Phonebook{
         menuSelect = Console.ReadLine();
         switch (menuSelect){
             case "1":
+                Console.WriteLine("");
                 AddStudent(Students);
                 break;
             case "2":
+                Console.WriteLine("");
                 EditStudent(Students);
                 break;
             case "3":
+                Console.WriteLine("");
                 SearchStudent(Students);
                 break;
             case "4":
@@ -238,6 +268,7 @@ public class Phonebook{
                 break;
             default:
                 Console.WriteLine("Select a VALID Option");
+                Console.WriteLine("");
                 break;
         }
     }while (menuSelect != "4");
