@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 public class Phonebook{
     string studentNumber{get; set;}
     string Surname{get; set;}
@@ -164,65 +165,43 @@ public class Phonebook{
             switch (menuSelect){
                 case "1":
                     Console.WriteLine("Here are the students from Philippines:");   
-                    foreach (Phonebook studentCountry in Students){
+                    foreach (Phonebook studentCountry in Students.OrderBy(s => s.Surname)){
                         if (studentCountry.countryCode == "63"){
-                        Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");                        }
+                        Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");}
                     }
                     break;
                 case "2":
                     Console.WriteLine("Here are the students from Thailand:");   
-                    foreach (Phonebook studentCountry in Students){
+                    foreach (Phonebook studentCountry in Students.OrderBy(s => s.Surname)){
                         if (studentCountry.countryCode == "66"){
-                        Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");                        }
+                        Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");}
                     }
                     break;
                 case "3":
                     Console.WriteLine("Here are the students from Singapore:");   
-                    foreach (Phonebook studentCountry in Students){
+                    foreach (Phonebook studentCountry in Students.OrderBy(s => s.Surname)){
                         if (studentCountry.countryCode == "65"){
-                        Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");                        }
+                        Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");}
                     }
                     break;
                 case "4":
                     Console.WriteLine("Here are the students from Indonesia:");   
-                    foreach (Phonebook studentCountry in Students){
+                    foreach (Phonebook studentCountry in Students.OrderBy(s => s.Surname)){
                         if (studentCountry.countryCode == "62"){
-                        Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");                        }
+                        Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");}
                     }
                     break;
                 case "5":
                     Console.WriteLine("Here are the students from Malaysia:");   
-                    foreach (Phonebook studentCountry in Students){
+                    foreach (Phonebook studentCountry in Students.OrderBy(s => s.Surname)){
                         if (studentCountry.countryCode == "60"){
-                        Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");                        }
+                        Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");}
                     }
                     break;
                 case "6":
-                    Console.WriteLine("Here are the students from Philippines:");   
-                    foreach (Phonebook studentCountry in Students){
-                        if (studentCountry.countryCode == "63"){
-                        Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");                        }
-                    }
-                    Console.WriteLine("\nHere are the students from Thailand:");   
-                    foreach (Phonebook studentCountry in Students){
-                        if (studentCountry.countryCode == "66"){
-                        Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");                        }
-                    }
-                    Console.WriteLine("\nHere are the students from Singapore:");   
-                    foreach (Phonebook studentCountry in Students){
-                        if (studentCountry.countryCode == "65"){
-                        Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");                        }
-                    }
-                    Console.WriteLine("\nHere are the students from Indonesia:");   
-                    foreach (Phonebook studentCountry in Students){
-                        if (studentCountry.countryCode == "62"){
-                        Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");                        }
-                    }
-                    Console.WriteLine("\nHere are the students from Malaysia:");   
-                    foreach (Phonebook studentCountry in Students){
-                        if (studentCountry.countryCode == "60"){
-                        Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");                        }
-                    }
+                    Console.WriteLine("Here are ALL the students:");   
+                    foreach (Phonebook studentCountry in Students.OrderBy(s => s.Surname)){
+                        Console.WriteLine($"{studentCountry.Firstname} {studentCountry.Surname} is a {studentCountry.Occupation}. Gender is {studentCountry.Gender}. And their number is {studentCountry.countryCode}-{studentCountry.areaCode}-{studentCountry.phoneNumber}");}
                     break;
                 case "0":
                     Console.Write("Search by Country has ended.\nReturning to Main Menu...");
